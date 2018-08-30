@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 2.4.1'
+ruby '~> 2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.2'
@@ -40,34 +40,3 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor'
 end
-
-gem 'devise'
-gem 'carrierwave'
-gem 'friendly_id', '~> 5.0'
-
-gem 'will_paginate', '~> 3.1.0'
-gem 'public_activity'
-
-gem 'acts_as_votable', '~> 0.10.0'
-gem 'acts_as_commentable'
-gem 'acts_as_follower'
-gem 'counter_culture', '~> 0.1.33'
-
-gem 'faker'
-gem 'populator'
-gem 'auto_html', '~>1.6.4'
-gem 'sanitize'
-
-gem 'active_model_serializers'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
