@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180830090354) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "friends", force: :cascade do |t|
+  create_table "friends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "email"
     t.datetime "created_at", null: false
@@ -23,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180830090354) do
     t.index ["user_id"], name: "index_friends_on_user_id", using: :btree
   end
 
-  create_table "subscribe_blocks", force: :cascade do |t|
+  create_table "subscribe_blocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "subscribe_id"
     t.boolean  "is_block",     default: false
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 20180830090354) do
     t.datetime "updated_at",                   null: false
   end
 
-  create_table "subscribes", force: :cascade do |t|
+  create_table "subscribes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "email"
     t.boolean  "is_block",   default: false
@@ -40,14 +37,7 @@ ActiveRecord::Schema.define(version: 20180830090354) do
     t.index ["user_id"], name: "index_subscribes_on_user_id", using: :btree
   end
 
-  create_table "subscribes_users", id: false, force: :cascade do |t|
-    t.integer "subscribe_id"
-    t.integer "user_id"
-    t.index ["subscribe_id"], name: "index_subscribe_users_on_subscribe_id", using: :btree
-    t.index ["user_id"], name: "index_subscribe_users_on_user_id", using: :btree
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
