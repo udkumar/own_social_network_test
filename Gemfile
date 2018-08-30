@@ -20,6 +20,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 gem 'pg', '0.21.0'
+gem 'mysql2', '< 0.5'
 
 group :development do
   gem 'spring'
