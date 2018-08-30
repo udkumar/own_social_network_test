@@ -151,7 +151,7 @@ If requester will pass same user again and again then respose will be as below:
 }
 ```
 
-## Notes: 
+## Notes - for local machine testing: 
 [Import in postman chrome ext app](https://github.com/udkumar/own_social_network_test/blob/master/public/Friend_Management.postman_collection.json):
 
 # Author:
