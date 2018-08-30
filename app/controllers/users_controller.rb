@@ -64,20 +64,24 @@ class UsersController < ApplicationController
   def subscribe
     if (params[:requestor] && params[:target])
       user = User.find_by(email: params[:requestor])
-      subscribe = Subscribe.find_by(email: params[:target])
-      if  !subscribe
-          subscribe = Subscribe.new(email: params[:target])
-          subscribe.save
-      end
-      existing_subscription = user.subscribe_blocks.find_by(user_id: user.id, subscribe_id: subscribe.id)
-      if  (!existing_subscription)
-          user.subscribe_blocks.create(subscribe: subscribe)
-          render json: {success: true}
+      if user.present?
+        subscribe = Subscribe.find_by(email: params[:target])
+        if  !subscribe
+            subscribe = Subscribe.new(email: params[:target])
+            subscribe.save
+        end
+        existing_subscription = user.subscribe_blocks.find_by(user_id: user.id, subscribe_id: subscribe.id)
+        if  (!existing_subscription)
+            user.subscribe_blocks.create(subscribe: subscribe)
+            render json: {success: true}
+        else
+            render json: {success: false, message: "Subscription already exist!"}
+        end
       else
-          render json: {success: false, message: "Subscription already exist"}
+        render json: {success: false, message: "requestor doesn't exist!"}
       end
     else
-      render json: {success: false, message: "params target or requestor not present or params not in correct format!"}
+      render json: {success: false, message: "params invalid or not present!"}
     end
   end
 
@@ -85,14 +89,23 @@ class UsersController < ApplicationController
   def block
     if (params[:requestor] && params[:target])
       user = User.find_by(email: params[:requestor])
-      target = Subscribe.find_by(email: params[:target])
-      if target
+      raise user.inspect
+      if user.present?
+        target = Subscribe.find_by(email: params[:target])
+        if target.present?
           s_block = user.subscribe_blocks.find_by_subscribe_id(target.id)
+          raise s_block.inspect
           s_block.is_block = true
-          s_block.save
-          render json: {success: true}
+          if s_block.save
+            render json: {success: true}
+          else
+            render json: {success: false, message: "Something went Wrong!"}
+          end
+        else
+            render json: {success: false, message: "target doesn't exist!"}
+        end
       else
-          render json: {success: false, message: "target doesn't exist"}
+        render json: {success: false, message: "requestor doesn't exist!"}
       end
     else
       render json: {success: false, message: "params target or requestor not present or params not in correct format!"}  
@@ -104,21 +117,27 @@ class UsersController < ApplicationController
   def receive_update
     if params[:sender]
       subscribe = Subscribe.find_by(email: params[:sender])
-      test = params[:text]
-      user = User.find_by(email: params[:sender])
-      subscribe_users = subscribe.users
-      receipients = []
-      test.scan(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i) { |x| receipients.push(x) }
-      subscribe_users.each do |u|
-          subscribe_block =  SubscribeBlock.find_by(subscribe_id: subscribe.id, user_id: u.id)
-          if (subscribe_block && !subscribe_block.is_block) 
-              receipients.push(u.email)
+      if subscribe.present?
+        test = params[:text]
+        user = User.find_by(email: params[:sender])
+        subscribe_users = subscribe.users
+        receipients = []
+        test.scan(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i) { |x| receipients.push(x) }
+        if subscribe_users.present?
+          subscribe_users.each do |u|
+              subscribe_block =  SubscribeBlock.find_by(subscribe_id: subscribe.id, user_id: u.id)
+              if (subscribe_block && !subscribe_block.is_block) 
+                  receipients.push(u.email)
+              end
           end
-      end
-      if (receipients.length > 0)
-        render json: {sucess: true, receipients: receipients}
+        end
+        if (receipients.length > 0)
+          render json: {sucess: true, receipients: receipients}
+        else
+          render json: {sucess: true, receipients: receipients, message: "receipient not found!"}
+        end
       else
-        render json: {sucess: true, receipients: receipients, message: "receipient not found!"}
+        render json: {sucess: false, message: "sender not found!"}
       end
     else
        render json: {success: false, message: "Something Missing!"}  
