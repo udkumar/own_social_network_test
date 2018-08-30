@@ -70,12 +70,11 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 ### JSON response:
 ``` json
 {
-	"success": true,
-	"friends" :
-		[
-			'common@example.com'
-		],
-	"count" : 1
+    "success": true,
+    "friends": [
+        "comman_friend_andy_john@example.com"
+    ],
+    "count": 1
 }
 ```
 
