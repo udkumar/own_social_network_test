@@ -89,12 +89,10 @@ class UsersController < ApplicationController
   def block
     if (params[:requestor] && params[:target])
       user = User.find_by(email: params[:requestor])
-      raise user.inspect
       if user.present?
         target = Subscribe.find_by(email: params[:target])
         if target.present?
           s_block = user.subscribe_blocks.find_by_subscribe_id(target.id)
-          raise s_block.inspect
           s_block.is_block = true
           if s_block.save
             render json: {success: true}
