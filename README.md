@@ -119,6 +119,8 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 ```
 
 ## 6. As a user, I need an API to retrieve all email addresses that can receive updates from an email address.
+### Request URL:
+> https://own-social-network.herokuapp.com/users/receive_update
 
 ### JSON request:
 ``` json
@@ -141,6 +143,7 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 }
 ```
 
+## Notes: [Postman Test JSON]():
 
 # Author:
 [uday Kumar](udkumar@hotmail.com)
