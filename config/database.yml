@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  password: root
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: own_social_network_test_production
-  username: own_social_network_test
-  password: <%= ENV['OWN_SOCIAL_NETWORK_TEST_DATABASE_PASSWORD'] %>
+  username: #own_social_network_test
+  password: #<%= ENV['OWN_SOCIAL_NETWORK_TEST_DATABASE_PASSWORD'] %>
