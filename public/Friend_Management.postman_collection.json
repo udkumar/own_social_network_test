@@ -1,0 +1,206 @@
+{
+	"id": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+	"name": "Friend_Management",
+	"description": "",
+	"order": [
+		"78c459b4-5c7b-c321-ee7a-cf17a0941ede",
+		"7210e637-bf0a-f563-f930-d26ad4b99a7e",
+		"895a25d4-9ed4-7b54-0495-eef3b9bce646",
+		"6a86575f-cce8-d51c-6188-32b3b1bac75a",
+		"f527b91e-484b-86d0-7726-715d7768d3d3",
+		"6ae5c9fa-bc2c-7944-bdbd-df79c85af708"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1535651116406,
+	"owner": "3946245",
+	"public": false,
+	"requests": [
+		{
+			"id": "6a86575f-cce8-d51c-6188-32b3b1bac75a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://own-social-network.herokuapp.com/users/subscribe",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+			"data": [],
+			"dataMode": "raw",
+			"name": "https://own-social-network.herokuapp.com/users/subscribe",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1535651804176,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"requestor\": \"lisa@example.com\",\n\t\"target\": \"john@example.com\"\n}\n\n"
+		},
+		{
+			"id": "6ae5c9fa-bc2c-7944-bdbd-df79c85af708",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://own-social-network.herokuapp.com/users/receive_update",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+			"data": [],
+			"dataMode": "raw",
+			"name": "https://own-social-network.herokuapp.com/users/receive_update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1535652020298,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"sender\": \"john@example.com\",\n\t\"text\": \"Hello World! kate@example.com\"\n}\n"
+		},
+		{
+			"id": "7210e637-bf0a-f563-f930-d26ad4b99a7e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://own-social-network.herokuapp.com/users/all_friends",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+			"data": [],
+			"dataMode": "raw",
+			"name": "https://own-social-network.herokuapp.com/users/all_friends",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1535651445941,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\"email\": \"andy@example.com\"}"
+		},
+		{
+			"id": "78c459b4-5c7b-c321-ee7a-cf17a0941ede",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://own-social-network.herokuapp.com/users/create_friend",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+			"data": [],
+			"dataMode": "raw",
+			"name": "https://own-social-network.herokuapp.com/users/create_friend",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1535651205186,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\"friends\": [\"andy@example.com\", \"john@example.com\"]}"
+		},
+		{
+			"id": "895a25d4-9ed4-7b54-0495-eef3b9bce646",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://own-social-network.herokuapp.com/users/common_friends",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+			"data": [],
+			"dataMode": "raw",
+			"name": "https://own-social-network.herokuapp.com/users/common_friends",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1535651624773,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\"friends\": [\"andy@example.com\", \"john@example.com\"]}"
+		},
+		{
+			"id": "f527b91e-484b-86d0-7726-715d7768d3d3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://own-social-network.herokuapp.com/users/block",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "1c3e99b1-30d1-a328-3214-67e7d6684038",
+			"data": [],
+			"dataMode": "raw",
+			"name": "https://own-social-network.herokuapp.com/users/block",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1535651911636,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"requestor\": \"test1@example.com\",\n\t\"target\": \"john@example.com\"\n}\n"
+		}
+	]
+}
