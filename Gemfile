@@ -30,9 +30,10 @@ group :development do
   gem 'guard'
   gem 'guard-rspec', '~> 4.2.8'
 end
+gem 'puma'
+
 
 group :development, :test do
-  gem 'puma'
   gem 'pg', '0.21.0'
 end
 
