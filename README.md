@@ -43,18 +43,21 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 ### JSON response:
 ``` json
 {
-	"success": true,
-	"friends" :
-		[
-			'john@example.com'
-		],
-	"count" : 1
+    "success": true,
+    "friends": [
+        "john@example.com",
+        "andy_comman@example.com",
+        "comman_friend_andy_john@example.com",
+        "john@example.com"
+    ],
+    "count": 4
 }
 ```
 
 ## 3. As a user, I need an API to retrieve the common friends list between two email addresses.
 ### Request URL:
 > https://own-social-network.herokuapp.com/users/common_friends
+>> I am working for issue
 
 ### JSON request:
 ``` json
@@ -96,10 +99,17 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 	"success": true
 }
 ```
+If requester will pass same user again and again then respose will be as below:
+``` json
+{
+    "success": false,
+    "message": "Subscription already exist!"
+}
+```
 
 ## 5. As a user, I need an API to block updates from an email address.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/subscribe
+> https://own-social-network.herokuapp.com/users/block
 
 ### JSON request:
 ``` json
@@ -133,12 +143,11 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 ## JSON response:
 ``` json
 {
-	"success": true,
-	"recipients":
-	[
-		"lisa@example.com",
-		"kate@example.com"
-	]
+    "sucess": true,
+    "receipients": [
+        "kate@example.com",
+        "lisa@example.com"
+    ]
 }
 ```
 
