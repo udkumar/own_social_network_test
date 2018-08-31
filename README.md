@@ -4,7 +4,7 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 
 
 ## Technology:
-> Ruby, Heroku, postgresql, REST API, Git
+> Ruby on Rails, Heroku, postgresql, REST API, Git
 
 
 ## 1. As a user, I need an API to create a friend connection between two email addresses.
