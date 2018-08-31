@@ -5,14 +5,18 @@ class UsersController < ApplicationController
   def create_friend
     if params[:friends]
       friends = params[:friends]
-      i = 0 
+      i = 0
       friends.each do |email|
         user = User.find_by(email: email)
-        if i == 0 
-          user.friends.create(email: friends[1])
-          i += 1
+        if i == 0
+         if(user.friends.where(email: friends[1]).length <= 0)
+           user.friends.create(email: friends[1])
+         end
+         i += 1
         else
-            user.friends.create(email: friends[0])
+         if(user.friends.where(email: friends[0]).length <= 0)
+           user.friends.create(email: friends[0])
+         end
         end
       end
       render json: {success: true}
