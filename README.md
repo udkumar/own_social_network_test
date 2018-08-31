@@ -9,7 +9,7 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 
 ## 1. As a user, I need an API to create a friend connection between two email addresses.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/create_friend
+> https://own-social-network.herokuapp.com/api/users/create_friend
 
 ### JSON request:
 ``` json
@@ -31,7 +31,7 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 
 ## 2. As a user, I need an API to retrieve the friends list for an email address.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/all_friends
+> https://own-social-network.herokuapp.com/api/users/all_friends
 
 ### JSON request:
 ``` json
@@ -56,7 +56,7 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 
 ## 3. As a user, I need an API to retrieve the common friends list between two email addresses.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/common_friends
+> https://own-social-network.herokuapp.com/api/users/common_friends
 >> I am working for issue
 
 ### JSON request:
@@ -83,7 +83,7 @@ This application would start with features like "Friend", "Unfriend", "Block", "
 
 ## 4. As a user, I need an API to subscribe to updates from an email address.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/subscribe
+> https://own-social-network.herokuapp.com/api/users/subscribe
 
 ### JSON request:
 ``` json
@@ -109,7 +109,7 @@ If requester will pass same user again and again then respose will be as below:
 
 ## 5. As a user, I need an API to block updates from an email address.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/block
+> https://own-social-network.herokuapp.com/api/users/block
 
 ### JSON request:
 ``` json
@@ -129,7 +129,7 @@ If requester will pass same user again and again then respose will be as below:
 
 ## 6. As a user, I need an API to retrieve all email addresses that can receive updates from an email address.
 ### Request URL:
-> https://own-social-network.herokuapp.com/users/receive_update
+> https://own-social-network.herokuapp.com/api/users/receive_update
 
 ### JSON request:
 ``` json
@@ -152,7 +152,7 @@ If requester will pass same user again and again then respose will be as below:
 ```
 
 ## Notes - for local machine testing: 
-[Import in postman chrome ext app](https://github.com/udkumar/own_social_network_test/blob/master/public/Friend_Management.postman_collection.json):
+[Import in postman chrome ext app](https://github.com/udkumar/own_social_network_test/blob/master/public/Friend_Management.postman_collection.json)
 
 # Author:
-[uday Kumar](udkumar@hotmail.com)
+[uday Kumar](https://github.com/udkumar)

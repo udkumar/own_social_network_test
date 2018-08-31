@@ -1,5 +1,138 @@
-<h1>Author:</h1>
-<p>Uday Kumar [udkumar@hotmail.com]</p>
-
-<p>This application would start with features like "Friend", "Unfriend", "Block", "Receive Updates" and only available with API only<br><br>
+<h1><a id="Own_Social_Network_Test_0"></a>Own Social Network Test</h1>
+<p>This application would start with features like “Friend”, “Unfriend”, “Block”, “Receive Updates” <br> and <b style="color:red;">only available with API </b></p>
 Here is the <a href="https://github.com/udkumar/own_social_network_test/blob/master/README.md">GitHub Link</a> </p>
+<h2><a id="Technology_5"></a>Technology:</h2>
+<blockquote>
+<p>Ruby on Rails, Heroku, postgresql, REST API, Git</p>
+</blockquote>
+<h2><a id="1_As_a_user_I_need_an_API_to_create_a_friend_connection_between_two_email_addresses_9"></a>1. As a user, I need an API to create a friend connection between two email addresses.</h2>
+<h3><a id="Request_URL_10"></a>Request URL:</h3>
+<blockquote>
+<p><a href="https://own-social-network.herokuapp.com/api/users/create_friend">https://own-social-network.herokuapp.com/api/users/create_friend</a></p>
+</blockquote>
+<h3><a id="JSON_request_13"></a>JSON request:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">friends</span>":
+        <span class="hljs-value">[
+        'andy@example.com',
+        'john@example.com'
+        ]
+</span>}
+</code></pre>
+<h3><a id="JSON_responses_24"></a>JSON responses:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}
+</code></pre>
+<h2><a id="2_As_a_user_I_need_an_API_to_retrieve_the_friends_list_for_an_email_address_31"></a>2. As a user, I need an API to retrieve the friends list for an email address.</h2>
+<h3><a id="Request_URL_32"></a>Request URL:</h3>
+<blockquote>
+<p><a href="https://own-social-network.herokuapp.com/api/users/all_friends">https://own-social-network.herokuapp.com/api/users/all_friends</a></p>
+</blockquote>
+<h3><a id="JSON_request_35"></a>JSON request:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value">'andy@example.com'
+</span>}
+</code></pre>
+<h3><a id="JSON_response_42"></a>JSON response:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">friends</span>": <span class="hljs-value">[
+        <span class="hljs-string">"john@example.com"</span>,
+        <span class="hljs-string">"andy_comman@example.com"</span>,
+        <span class="hljs-string">"comman_friend_andy_john@example.com"</span>,
+        <span class="hljs-string">"john@example.com"</span>
+    ]</span>,
+    "<span class="hljs-attribute">count</span>": <span class="hljs-value"><span class="hljs-number">4</span>
+</span>}
+</code></pre>
+<h2><a id="3_As_a_user_I_need_an_API_to_retrieve_the_common_friends_list_between_two_email_addresses_56"></a>3. As a user, I need an API to retrieve the common friends list between two email addresses.</h2>
+<h3><a id="Request_URL_57"></a>Request URL:</h3>
+<blockquote>
+<p><a href="https://own-social-network.herokuapp.com/api/users/common_friends">https://own-social-network.herokuapp.com/api/users/common_friends</a></p>
+<blockquote>
+<p>I am working for issue</p>
+</blockquote>
+</blockquote>
+<h3><a id="JSON_request_61"></a>JSON request:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">friends</span>":
+        <span class="hljs-value">[
+        'andy@example.com',
+        'john@example.com'
+        ]
+</span>}
+</code></pre>
+<h3><a id="JSON_response_72"></a>JSON response:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">friends</span>": <span class="hljs-value">[
+        <span class="hljs-string">"comman_friend_andy_john@example.com"</span>
+    ]</span>,
+    "<span class="hljs-attribute">count</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+</span>}
+</code></pre>
+<h2><a id="4_As_a_user_I_need_an_API_to_subscribe_to_updates_from_an_email_address_83"></a>4. As a user, I need an API to subscribe to updates from an email address.</h2>
+<h3><a id="Request_URL_84"></a>Request URL:</h3>
+<blockquote>
+<p><a href="https://own-social-network.herokuapp.com/api/users/subscribe">https://own-social-network.herokuapp.com/api/users/subscribe</a></p>
+</blockquote>
+<h3><a id="JSON_request_87"></a>JSON request:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">requestor</span>": <span class="hljs-value"><span class="hljs-string">"lisa@example.com"</span></span>,
+    "<span class="hljs-attribute">target</span>": <span class="hljs-value"><span class="hljs-string">"john@example.com"</span>
+</span>}
+</code></pre>
+<h3><a id="JSON_response_95"></a>JSON response:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}
+</code></pre>
+<p>If requester will pass same user again and again then respose will be as below:</p>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Subscription already exist!"</span>
+</span>}
+</code></pre>
+<h2><a id="5_As_a_user_I_need_an_API_to_block_updates_from_an_email_address_109"></a>5. As a user, I need an API to block updates from an email address.</h2>
+<h3><a id="Request_URL_110"></a>Request URL:</h3>
+<blockquote>
+<p><a href="https://own-social-network.herokuapp.com/api/users/block">https://own-social-network.herokuapp.com/api/users/block</a></p>
+</blockquote>
+<h3><a id="JSON_request_113"></a>JSON request:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">requestor</span>": <span class="hljs-value"><span class="hljs-string">"andy@example.com"</span></span>,
+    "<span class="hljs-attribute">target</span>": <span class="hljs-value"><span class="hljs-string">"john@example.com"</span>
+</span>}
+
+</code></pre>
+<h3><a id="JSON_response_122"></a>JSON response</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}
+</code></pre>
+<h2><a id="6_As_a_user_I_need_an_API_to_retrieve_all_email_addresses_that_can_receive_updates_from_an_email_address_129"></a>6. As a user, I need an API to retrieve all email addresses that can receive updates from an email address.</h2>
+<h3><a id="Request_URL_130"></a>Request URL:</h3>
+<blockquote>
+<p><a href="https://own-social-network.herokuapp.com/api/users/receive_update">https://own-social-network.herokuapp.com/api/users/receive_update</a></p>
+</blockquote>
+<h3><a id="JSON_request_133"></a>JSON request:</h3>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">sender</span>": <span class="hljs-value"><span class="hljs-string">"john@example.com"</span></span>,
+    "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Hello World! kate@example.com"</span>
+</span>}
+
+</code></pre>
+<h2><a id="JSON_response_142"></a>JSON response:</h2>
+<pre><code class="language-json">{
+    "<span class="hljs-attribute">sucess</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">receipients</span>": <span class="hljs-value">[
+        <span class="hljs-string">"kate@example.com"</span>,
+        <span class="hljs-string">"lisa@example.com"</span>
+    ]
+</span>}
+</code></pre>
+<h2><a id="Notes__for_local_machine_testing_153"></a>Notes - for local machine testing:</h2>
+<p><a href="https://github.com/udkumar/own_social_network_test/blob/master/public/Friend_Management.postman_collection.json">Import in postman chrome ext app</a></p>
+<h1><a id="Author_156"></a>Author:</h1>
+<p><a href="https://github.com/udkumar">uday Kumar</a></p>
