@@ -42,3 +42,9 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor'
 end
+
+group :test do
+  gem "rspec-rails", "~> 2.14"
+  gem "factory_girl_rails"
+  gem 'ffaker'
+end
